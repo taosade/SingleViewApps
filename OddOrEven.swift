@@ -86,28 +86,28 @@ struct OddOrEvenView: View
 		}
 	}
 
-	func offsetValue(_ card: Card) -> CGSize
+	private func offsetValue(_ card: Card) -> CGSize
 	{
 		guard card.id == self.stack.last?.id else { return CGSize.zero }
 
 		return self.offset
 	}
 
-	func rotationAngle(_ card: Card) -> Angle
+	private func rotationAngle(_ card: Card) -> Angle
 	{
 		guard card.id == self.stack.last?.id else { return Angle.zero }
 
 		return Angle(degrees: Double(self.offset.width * 0.02))
 	}
 
-	func scaleFactor(_ card: Card) -> Double
+	private func scaleFactor(_ card: Card) -> Double
 	{
 		guard card.id == self.stack.last?.id else { return 1 }
 
 		return 1 - max(abs(self.offset.width), abs(self.offset.height)) / Double(screenWidth * 10)
 	}
 
-	func dragEnded(_ offset: DragGesture.Value)
+	private func dragEnded(_ offset: DragGesture.Value)
 	{
 		// Put card back after slight drag:
 
