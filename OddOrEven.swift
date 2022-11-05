@@ -74,8 +74,7 @@ struct OddOrEvenView: View
 						.onChanged { value in offset = value.translation }
 						.onEnded { value in dragEnded(value) })
 				}
-			}
-			.zIndex(2)
+			}.zIndex(2)
 
 			Spacer(minLength: 0)
 
