@@ -2,7 +2,7 @@
 
 import SwiftUI
 
-struct Card: Equatable, Identifiable
+struct Card: Identifiable
 {
 	let id: UUID
 	let number: Int
